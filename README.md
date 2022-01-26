@@ -1,5 +1,5 @@
 ---
-description: How to build a marketplace with Strangemood
+description: Grab the @strangemood/strangemood package
 ---
 
 # Install
