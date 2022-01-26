@@ -164,7 +164,7 @@ const provider = useAnchorProvider();
 
 // ...
 
-const program = await fetchStrangemoodProgram()
+const program = await fetchStrangemoodProgram(provider);
 const {
   tx,
   signers,

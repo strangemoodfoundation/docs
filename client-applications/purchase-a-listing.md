@@ -39,7 +39,7 @@ const provider = useAnchorProvider();
 
 // ...
 
-const program = await fetchStrangemoodProgram();
+const program = await fetchStrangemoodProgram(provider);
 const { ix, receipt } = await purchase({
   program,
   cashier: new anchor.web3.PublicKey("your-apps-pubkey"),
@@ -64,13 +64,102 @@ You can cash a Receipt to pay out all parties if the receipt is marked as "casha
 
 
 
-{% tabs %}
-{% tab title="Express" %}
+Cashing requires your application's keypair, and so should be done on a server. Put the contents of the keypair (generated from `solana-keygen` above) into an environment variable like `CASHIER_KEYPAIR` .&#x20;
 
+
+
+{% tabs %}
+{% tab title="TypeScript" %}
+```typescript
+import { Provider, web3 } from '@project-serum/anchor';
+import {
+  Transaction,
+  clusterApiUrl,
+  PublicKey
+} from '@solana/web3.js';
+import { cash, fetchStrangemoodProgram } from '@strangemood/strangemood';
+
+// An anchor-friendly wallet generator
+function cashierWallet() {
+  let private_key = process.env.CASHIER_KEYPAIR;
+  if (!private_key) {
+    throw new Error('Unexpectedly did not find process.env.CASHIER_KEYPAIR');
+  }
+  const keypair = Keypair.fromSecretKey(
+    Uint8Array.from(JSON.parse(private_key))
+  );
+
+  return {
+    signTransaction: async (tx: Transaction): Promise<Transaction> => {
+      tx.sign(keypair);
+      return tx;
+    },
+    signAllTransactions: async (txs: Transaction[]): Promise<Transaction[]> => {
+      txs.forEach((tx) => tx.sign(keypair));
+      return txs;
+    },
+    publicKey: keypair.publicKey,
+  };
+}
+
+const conn = new web3.Connection(clusterApiUrl("mainnet-beta"));
+const provider = new Provider(conn, cashierWallet(), {});
+const program = await fetchStrangemoodProgram(provider);
+  
+const { tx } = await cash({
+  program,
+  signer: provider.wallet.publicKey,
+  receipt: new PublicKey("some-receipt-pubkey"),
+});
+
+const signature = await program.provider.send(tx);
+```
 {% endtab %}
 
-{% tab title="Nextjs API Route" %}
+{% tab title="JavaScript" %}
+```javascript
+import { Provider, web3 } from '@project-serum/anchor';
+import {
+  clusterApiUrl,
+  PublicKey
+} from '@solana/web3.js';
+import { cash, fetchStrangemoodProgram } from '@strangemood/strangemood';
 
+// An anchor-friendly wallet generator
+function cashierWallet() {
+  let private_key = process.env.CASHIER_KEYPAIR;
+  if (!private_key) {
+    throw new Error('Unexpectedly did not find process.env.CASHIER_KEYPAIR');
+  }
+  const keypair = Keypair.fromSecretKey(
+    Uint8Array.from(JSON.parse(private_key))
+  );
+
+  return {
+    signTransaction: async (tx) => {
+      tx.sign(keypair);
+      return tx;
+    },
+    signAllTransactions: async (txs) => {
+      txs.forEach((tx) => tx.sign(keypair));
+      return txs;
+    },
+    publicKey: keypair.publicKey,
+  };
+}
+
+const conn = new web3.Connection(clusterApiUrl("mainnet-beta"));
+const provider = new Provider(conn, cashierWallet(), {});
+const program = await fetchStrangemoodProgram(provider);
+  
+const { tx } = await cash({
+  program,
+  signer: provider.wallet.publicKey,
+  receipt: new PublicKey("some-receipt-pubkey"),
+});
+
+const signature = await program.provider.send(tx);
+```
 {% endtab %}
 {% endtabs %}
 
