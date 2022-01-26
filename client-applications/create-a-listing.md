@@ -36,38 +36,9 @@ To ensure listings are usable in many different contexts, your application shoul
 
 
 
-Here's a few examples of uploading an OpenMetaGraph document, and persisting it somewhere on IPFS.&#x20;
+Here's an example of uploading an OpenMetaGraph document, and persisting it somewhere on IPFS.&#x20;
 
 {% tabs %}
-{% tab title="Using web3.storage" %}
-```javascript
-const metadata = {
-  "object": "omg",
-  "version": "0.1.0",
-  "schemas": ["ipfs://QmUmLdYHHAqDYNnRGeKbHg4pxocFV1VAZuuHuRvdNiY1Bb"],
-  "elements": [
-    {
-      "object": "string",
-      "key": "title",
-      "value": "My Cool Title"
-    },
-    {
-      "object": "file",
-      "key": "photos",
-      "contentType": "image/png",
-      "uri": "ipfs://some-cid"
-    },
-    {
-      "object": "file",
-      "key": "photos",
-      "contentType": "image/png",
-      "uri": "ipfs://another-cid"
-    }
-  ]
-}
-```
-{% endtab %}
-
 {% tab title="Using a pinning service" %}
 ```javascript
 const metadata = {
@@ -175,9 +146,9 @@ const {
   price: new BN(1000), // Price in Lamports!
   decimals: 0, // not subdividable
   uri: "ipfs://some-cid", 
-  is_consumable: false,
-  is_refundable: true,
-  is_available: true
+  isConsumable: false,
+  isRefundable: true,
+  isAvailable: true
 });
 
 await provider.send(tx, signers);
