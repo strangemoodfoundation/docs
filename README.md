@@ -12,14 +12,6 @@ To start building on Strangemood, consider using the `@strangemood/strangemood` 
 # Install via NPM
 npm install --save @strangemood/strangemood ipfs-http-client @project-serum/anchor @solana/web3.js
 ```
-
-
-
-If you're using React, you may also want to install the wallet adapter library as well:
-
-```
-npm install --save @solana/wallet-adapter-react
-```
 {% endtab %}
 
 {% tab title="Yarn" %}
@@ -27,14 +19,14 @@ npm install --save @solana/wallet-adapter-react
 # Install via Yarn
 yarn add @strangemood/strangemood ipfs-http-client @project-serum/anchor @solana/web3.js
 ```
-
-
-
-If you're using React, you may also want to install the wallet adapter library as well:
-
-```
-yarn add @solana/wallet-adapter-react
-```
 {% endtab %}
 {% endtabs %}
+
+
+
+Strangemood's node package uses [Solana](./#install), a fast, environmentally efficient blockchain. To hack on Solana, **you should install a browser-extension wallet like** [**Phantom**](https://phantom.app)**.**&#x20;
+
+****
+
+Strangemood also uses [Anchor](https://github.com/project-serum/anchor), a popular framework for Solana that provides some security benefits and UX improvements.&#x20;
 

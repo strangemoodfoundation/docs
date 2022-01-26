@@ -162,26 +162,26 @@ import { BN } from '@project-serum/anchor';
 
 const provider = useAnchorProvider();
 
-async function createListing() {
-  const program = await fetchStrangemoodProgram()
-  
-  const {
-    tx,
-    signers,
-    publicKey, // the listing's public key
-  } = await initListing({
-    program,
-    signer: provider.wallet.publicKey,
-    price: new BN(1000), // Price in Lamports!
-    decimals: 0, // not subdividable
-    uri: "ipfs://some-cid", 
-    is_consumable: false,
-    is_refundable: true,
-    is_available: true
-  });
-  
-  await provider.send(tx, signers);
-}
+// ...
+
+const program = await fetchStrangemoodProgram()
+const {
+  tx,
+  signers,
+  publicKey, // the listing's public key
+} = await initListing({
+  program,
+  signer: provider.wallet.publicKey,
+  price: new BN(1000), // Price in Lamports!
+  decimals: 0, // not subdividable
+  uri: "ipfs://some-cid", 
+  is_consumable: false,
+  is_refundable: true,
+  is_available: true
+});
+
+await provider.send(tx, signers);
+
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,12 +1,24 @@
-# Using Solana & Anchor
+# Using React
 
-Strangemood's node package uses [Solana](using-solana-and-anchor.md#install), a fast, environmentally efficient blockchain. To hack on Solana, **you should install a browser-extension wallet like** [**Phantom**](https://phantom.app)**.**
+If you're using React, you may want to use Solana's hooks for managing wallets.
 
-****
+{% tabs %}
+{% tab title="NPM" %}
+```
+npm install --save @solana/wallet-adapter-react
+```
+{% endtab %}
 
-Additionally, Strangemood uses [Anchor](https://github.com/project-serum/anchor), a popular framework for Solana that provides some security benefits and UX improvements. **If you're using React,** **you may want to create a few helpers to interact with Solana through Anchor.**&#x20;
+{% tab title="Yarn" %}
+```
+yarn add @solana/wallet-adapter-react
+```
+{% endtab %}
+{% endtabs %}
 
-****
+
+
+You may also want to create a few helpers to interact with Solana through Anchor.&#x20;
 
 {% tabs %}
 {% tab title="TypeScript" %}
