@@ -4,7 +4,7 @@ The `strangemood listing init` is used to create listings from the CLI. You can 
 
 #### Strangemood charter
 
-One of the most important parameters is `--charter`, it determines the Realm your listing belongs to. The Realm is a set of accounts that lets Strangemood set parameters on the program and collect fees. The current Strangemood charter is deployed at the following addresses:
+One of the most important parameters is `--charter`, it determines a set of parameters on the program and where fees go. You must use the same charter to work with other Strangemood clients and listings. The current Strangemood charter is deployed at the following addresses:
 
 * Testnet: `5ugGJvE1RiYhDWnTgNFQL6RVq6SUo3wzJiPAZ3XZuckF`
 * Mainnet-beta: \<COMMING SOON>&#x20;
