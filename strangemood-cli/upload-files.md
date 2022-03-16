@@ -1,8 +1,8 @@
 # Upload Files
 
-You may need a place to store files when creating your listing. For example, your listing needs a primary image, images, and videos. We reccomend storing that content on [IPFS](https://ipfs.io) and provide an easy way to do so. However, you are welcome to store files anywhere you want as long as you have a link!
+You may need a place to store files when creating your listing. For example, your listing needs a primary image, images, and videos. We reccomend storing that content on [IPFS](https://ipfs.io) and provide an easy way to do so. However, you are welcome to store files at any uri.
 
-#### File uploads
+#### Upload file to IPFS
 
 You can use the `listing file upload` command to store files on IPFS.
 
@@ -12,7 +12,7 @@ strangemood listing file upload <listing_address> ~/image.png
 
 This will return a [CID](https://docs.ipfs.io/concepts/content-addressing/) that you can reference in your metadata with `ipfs://your_cid`.&#x20;
 
-#### Encrypted uploads
+#### Encrypted uploads with Precrypt
 
 Because [everything stored on IPFS is public](https://docs.ipfs.io/concepts/privacy-and-encryption/#what-s-public-on-ipfs), most sellers will want to encrypt their game before storing it. That is why we build [Precrypt](https://precrypt.org), process for storing encrypted files and only letting them be decrypted by holders of a specific token. You can encrypt your files and delegate access to the Precrypt network using the `-e` command.
 

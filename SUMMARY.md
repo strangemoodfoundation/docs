@@ -6,4 +6,3 @@
 * [Create a Listing](strangemood-cli/create-a-listing.md)
 * [Purchase a listing](strangemood-cli/purchase-a-listing.md)
 * [Upload Files](strangemood-cli/upload-files.md)
-* [Create a Charter](strangemood-cli/create-a-charter.md)

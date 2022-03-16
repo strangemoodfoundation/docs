@@ -22,8 +22,10 @@ yarn global add @strangemood/cli
 {% endtab %}
 {% endtabs %}
 
-The Strangemood program lives on [Solana](./#install), a fast, environmentally efficient blockchain. To get started **you will also need to install the Solana CLI:**
+**You will also need to install the Solana CLI** to be able to interact with the Strangemood program:
 
 {% embed url="https://docs.solana.com/cli/install-solana-cli-tools" %}
 Link to Solana CLI Install Docs
 {% endembed %}
+
+Lastly, [airdrop yourself some tokens](https://docs.solana.com/cli/transfer-tokens) to use Testnet or purchase tokens (we recommend [FTX](https://ftx.com)) for Mainnet.&#x20;

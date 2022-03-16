@@ -9,17 +9,17 @@ One of the most important parameters is `--charter`, it determines a set of par
 * Testnet: `5ugGJvE1RiYhDWnTgNFQL6RVq6SUo3wzJiPAZ3XZuckF`
 * Mainnet-beta: `D8hxZ192cEtaWBYTQfpLKDtHPUMjd8AVkAAVTdLyLujx`&#x20;
 
-You can also [create your own charter](create-a-charter.md) if you want.&#x20;
+You could also create your own charter using the `strangemood charter` command group.
 
 #### Create listing example
 
-Here is an example of using the create listing command to make a listing with a price of 60 Sol:
+Here is an example of making a listing with a price of 60 Sol:
 
 ```bash
 strangemood listing init --charter=5ugGJvE1RiYhDWnTgNFQL6RVq6SUo3wzJiPAZ3XZuckF --decimals=0 --price=60 --uri=ifps://2MqnSpSRMsGZmT78qn8nFjQk5bTLWUFhnW9faWq6vnQm
 ```
 
-If your command is successful it will return the new listings address.
+If your command is successful it will return the new listing's address.
 
 #### Manage Listings
 
