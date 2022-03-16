@@ -1,12 +1,12 @@
 # Table of contents
 
-## Strangemood CLI
+## cli
 
 * [Install](README.md)
-* [Create a Listing](strangemood-cli/create-a-listing.md)
-* [Purchase a Listing](strangemood-cli/purchase-a-listing.md)
-* [Upload Files](strangemood-cli/upload-files.md)
+* [Create a Listing](cli/create-a-listing.md)
+* [Purchase a Listing](cli/purchase-a-listing.md)
+* [Upload Files](cli/upload-files.md)
 
-## Contributing
+## browser client
 
-* [Make a Storefront](contributing/make-a-storefront.md)
+* [Make a Storefront](browser-client/make-a-storefront.md)
