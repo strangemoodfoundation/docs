@@ -124,7 +124,13 @@ You can view the schema for a Strangemood listing using the OpenMetaGraph schema
 The `lib/graphql.ts` file has code for retrieving and parsing the listing's metadata. The graphql query for retrieving the metadata can be seen in this section:&#x20;
 
 ```typescript
-const query = gql`
+const LISTING_METADATA_SCHEMA =
+  "bafkreiczgupdf5ha7jt5oqn77koptvclt7edfzriu34ozgeqnasmhyio6a";
+
+export async function getListingMetadata(
+  uri: string
+): Promise<ListingMetadata> {
+  const query = gql`
     query ($key: String) {
       get(key: $key) {
         name
