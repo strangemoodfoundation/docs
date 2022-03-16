@@ -7,7 +7,7 @@ The `strangemood listing init` is used to create listings from the CLI. You can 
 One of the most important parameters is `--charter`, it determines a set of parameters on the program and where fees go. You must use the same charter to work with other Strangemood clients and listings. The current Strangemood charter is deployed at the following addresses:
 
 * Testnet: `5ugGJvE1RiYhDWnTgNFQL6RVq6SUo3wzJiPAZ3XZuckF`
-* Mainnet-beta: \<COMMING SOON>&#x20;
+* Mainnet-beta: `D8hxZ192cEtaWBYTQfpLKDtHPUMjd8AVkAAVTdLyLujx`&#x20;
 
 You can also [create your own charter](create-a-charter.md) if you want.&#x20;
 
