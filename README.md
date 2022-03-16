@@ -1,32 +1,29 @@
 ---
-description: Grab the @strangemood/strangemood package
+description: Grab the @strangemood/cli package
 ---
 
 # Install
 
-To start building on Strangemood, consider using the `@strangemood/strangemood`  package. This isn't the only way you can interact with the Strangemood protocol, but it is currently the easiest.
+The Strangemood CLI is an easy way to start interacting with the Strangemood program. You can start by installing the `@strangemood/cli` package.&#x20;
 
 {% tabs %}
 {% tab title="NPM" %}
 ```
 # Install via NPM
-npm install --save @strangemood/strangemood ipfs-http-client @project-serum/anchor @solana/web3.js
+npm install -g @strangemood/cli
 ```
 {% endtab %}
 
 {% tab title="Yarn" %}
 ```
 # Install via Yarn
-yarn add @strangemood/strangemood ipfs-http-client @project-serum/anchor @solana/web3.js
+yarn global add @strangemood/cli
 ```
 {% endtab %}
 {% endtabs %}
 
+The Strangemood program lives on [Solana](./#install), a fast, environmentally efficient blockchain. To get started **you will also need to install the Solana CLI:**
 
-
-Strangemood's node package uses [Solana](./#install), a fast, environmentally efficient blockchain. To hack on Solana, **you should install a browser-extension wallet like** [**Phantom**](https://phantom.app)**.**&#x20;
-
-****
-
-Strangemood also uses [Anchor](https://github.com/project-serum/anchor), a popular framework for Solana that provides some security benefits and UX improvements.&#x20;
-
+{% embed url="https://docs.solana.com/cli/install-solana-cli-tools" %}
+Link to Solana CLI Install Docs
+{% endembed %}
